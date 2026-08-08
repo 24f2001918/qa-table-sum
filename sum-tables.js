@@ -13,7 +13,6 @@ const seeds = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
     const url = `https://sanand0.github.io/tdsdata/js_table/?seed=${seed}`;
     await page.goto(url, { waitUntil: 'networkidle' });
 
-    // Grab every table cell's text content on the page
     const numbers = await page.$$eval('table td, table th', (cells) =>
       cells
         .map((c) => c.textContent.trim())
